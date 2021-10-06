@@ -27,10 +27,20 @@ const movieDB = {
   ]
 };
 
-m = movieDB.movies.sort();
-for (let i = 0; i<5; i++){
-  document.querySelectorAll('.promo__interactive-list li')[i].replaceWith(m[i]);
-}
+const sortedList = movieDB.movies.sort();
+const listItems = document.querySelectorAll('.promo__interactive-item');
+
+sortedList.forEach((el, index) => {
+  listItems[index].innerText = el;
+});
 
 // 5) Добавить нумерацию выведенных фильмов
+
+// const ul = document.getElementsByTagName("ul")
+// ol = document.createElement("ol");
+
+// li = ul.querySelectorAll('li');
+// for(let i=0;i<li.length;i++) {
+//   ol.appendChild(li[i]);
+// }
 
